@@ -35,7 +35,6 @@ function crearDiscente(id, nom, cognom, nota1, nota2, nota3){
 //Llamada a la función crearDiscente.
 let discente1 = crearDiscente(123456, "Varian", "Wrynn", 8, 6, 9);
 
-//Mostrar la información del discente.
-console.log(discente1.imprimirAficiones());
+//Mostrar toda la información del discente.
 console.log(discente1.imprimirInforme());
 
