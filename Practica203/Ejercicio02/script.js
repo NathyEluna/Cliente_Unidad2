@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 
 //Misma función del ejercício 01.
 function crearCurso(nom, anio){

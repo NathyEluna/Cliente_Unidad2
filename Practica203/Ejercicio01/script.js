@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 
 //Función para crear un curso.
 function crearCurso(nom, anio){
