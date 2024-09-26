@@ -14,20 +14,22 @@ function crearDiscente(id, nom, cognom, nota1, nota2, nota3){
         },
         //Métodos del objeto discente.
         calcularMedia: function(){
-            return this.notasDiscente.primera + this.notasDiscente.segunda + this.notasDiscente.tercera / 3;
+            return ((this.notasDiscente.primera + this.notasDiscente.segunda + this.notasDiscente.tercera) / 3).toFixed(2);
         },
         imprimirAficiones: function(){
             return `Aficiones del alumno:  [${this.aficiones.join(", ")}].`
         },
         imprimirInforme: function(){
-            console.log(`Informe del alumno ${this.idDiscente}:`);
-            console.log(`- Nombre completo del alumno: ${this.nombreDiscente} ${this.apellidosDiscente}.`);
-            console.log(`- ${this.imprimirAficiones()}`);
-            console.log(`- Notas del alumno:`);
-            console.log(`-- Primera evaluación: ${this.notasDiscente.primera}.`);
-            console.log(`-- Segunda evaluación: ${this.notasDiscente.segunda}.`);
-            console.log(`-- Tercera evaluación: ${this.notasDiscente.tercera}.`);
-            console.log(`- Media de las tres evaluaciones: ${this.calcularMedia()}`);
+            let informe = `Informe del alumno ${this.idDiscente}:\n`;
+            informe += `- Nombre completo del alumno: ${this.nombreDiscente} ${this.apellidosDiscente}.\n`;
+            informe += `- ${this.imprimirAficiones()}\n`;
+            informe += `- Notas del alumno:\n`;
+            informe += `-- Primera evaluación: ${this.notasDiscente.primera}.\n`;
+            informe += `-- Segunda evaluación: ${this.notasDiscente.segunda}.\n`;
+            informe += `-- Tercera evaluación: ${this.notasDiscente.tercera}.\n`;
+            informe += `- Media de las tres evaluaciones: ${this.calcularMedia()}\n`;
+
+            return informe;
         },
     };
 };//crear discente

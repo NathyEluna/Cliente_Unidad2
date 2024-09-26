@@ -1,6 +1,6 @@
 "use strict";
 
-//Misma función del ejercício 01.
+//Función para crear curso igual a la del ejercício 01.
 function crearCurso(nom, anio){
     return{
         nombreCurso : nom,
@@ -17,11 +17,12 @@ let curso2 = crearCurso("Programación", 2023);
 function mostrarCurso(curso){
     let string = "";
 
-        console.log(`Mostrando los datos del curso ${curso.nombreCurso}: `);
-        for(var propiedad in curso){
-           string += `${propiedad}: ${curso[propiedad]}\n`;
-        }
-    return console.log(string);
+    string += `Mostrando los datos del curso ${curso.nombreCurso}: \n`;
+    for(var propiedad in curso){
+        string += `${propiedad}: ${curso[propiedad]}\n`;
+    };
+
+    return string;
 };//mostrar curso
 
 //Llamada a la función mostrar curso.
