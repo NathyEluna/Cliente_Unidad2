@@ -41,7 +41,8 @@ function crearCurso(nom, anio){
         descripcion : "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         alumnado : [],
         matricular: function(discente){
-            return this.alumnado = ([...this.alumnado], {...discente});
+            //Corregir quitando el return y poniendo el discente dentro del array sin spread operator.
+            return this.alumnado = [...this.alumnado, discente];
         },
     };
 };//crear curso
