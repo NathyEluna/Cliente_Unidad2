@@ -1,6 +1,18 @@
 "use strict";
-import {nombreMayusculas} from "../bibliotecas/bibliotecas.js";
+//Importación de las funciones utilizadas en el ejercício 1.
+import {nombreMayusculas, ordernarNombresAlReves, crearArrayObjetos, imprimirObjeto} from "../bibliotecas/bibliotecas.js";
 
-let nombres = ["Varian", "Anduin", "Tyrande", "", ""];
+//Array con los nombres.
+let nombres = ["Varian", "Anduin", "Tyrande", "Jaina", "Malfurion"];
 
-console.log(nombreMayusculas(nombres));
+//Llamada a las funciones:
+
+//Todos los nombres a mayúsculas.
+console.log(`Todos los nombres a mayúsculas: [${nombreMayusculas(nombres).join(", ")}]`);
+
+//Nombres ordenados alfabeticamente y al revés.
+console.log(`Nombres ordenados alfabeticamente y al revés: [${ordernarNombresAlReves(nombres).join(", ")}]`);
+
+//Crear un array de objetos con los nombres.
+console.log(`Array de objetos:\n${imprimirObjeto(crearArrayObjetos(nombres))}`);
+

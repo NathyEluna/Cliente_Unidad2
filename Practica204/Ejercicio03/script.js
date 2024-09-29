@@ -1,5 +1,7 @@
 "use strict";
 
+import {imprimirUsuario, agregarUsuario, obtenerUsuariosMayoresEdad, obtenerUsuariosCorreoYahoo, obtenerUsuariosClaroMayoresEspana, obtenerUsuariosDatosFaltantes, agregarApellidos, agregarCodigo} from "../bibliotecas/bibliotecas.js";
+
 //Copia del fichero pasado en aules.
 const usuarios = [
     {
@@ -93,5 +95,52 @@ const usuarios = [
         telefono: "",
       },
     },
-  ];
+];
 
+//Nuevo usuário a añadir.
+const nuevoUsuario = {
+  nombre: "Harry",
+  preferencias: { tema: "claro", idioma: "español", edad: 22 },
+  contacto: {
+      direccion: {
+          calle: "Privet Drive, 4",
+          localidad: "Little Whinging",
+          pais: "Inglaterra",
+      },
+      correoelectronico: "harry@gmail.com",
+      telefono: "987654321",
+  },
+};
+
+// Guardar los resultados y mostrarlos
+let resultadoAgregar = agregarUsuario(usuarios, nuevoUsuario);
+let resultadoMayores = obtenerUsuariosMayoresEdad(resultadoAgregar.usuariosActualizados);
+let resultadoCorreoYahoo = obtenerUsuariosCorreoYahoo(resultadoAgregar.usuariosActualizados);
+let resultadoTemaClaro = obtenerUsuariosClaroMayoresEspana(resultadoAgregar.usuariosActualizados);
+let resultadoDatosFaltantes = obtenerUsuariosDatosFaltantes(resultadoAgregar.usuariosActualizados);
+let resultadoAgregarApellidos = agregarApellidos(resultadoAgregar.usuariosActualizados);
+let resultadoAgregarCodigo = agregarCodigo(resultadoAgregar.usuariosActualizados);
+
+// Imprimir los resultados
+console.log(resultadoAgregar.mensaje);
+console.log(imprimirUsuario(resultadoAgregar.usuario));
+console.log("Usuarios actualizados:");
+console.log(imprimirUsuario(resultadoAgregar.usuariosActualizados));
+
+console.log(resultadoMayores.mensaje);
+console.log(imprimirUsuario(resultadoMayores.usuarios));
+
+console.log(resultadoCorreoYahoo.mensaje);
+console.log(imprimirUsuario(resultadoCorreoYahoo.usuarios));
+
+console.log(resultadoTemaClaro.mensaje);
+console.log(imprimirUsuario(resultadoTemaClaro.usuarios));
+
+console.log(resultadoDatosFaltantes.mensaje);
+console.log(imprimirUsuario(resultadoDatosFaltantes.usuarios));
+
+console.log(resultadoAgregarApellidos.mensaje);
+console.log(imprimirUsuario(resultadoAgregarApellidos.usuarios));
+
+console.log(resultadoAgregarCodigo.mensaje);
+console.log(imprimirUsuario(resultadoAgregarCodigo.usuarios));
